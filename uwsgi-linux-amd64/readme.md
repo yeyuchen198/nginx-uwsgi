@@ -14,7 +14,7 @@ https://github.com/golang/go/blob/master/src/net/http/status.go
 
 ------
 termux里面status.go文件路径为：
-/data/data/com.termux/files/usr/lib/go/src/net/http
+/data/data/com.termux/files/usr/lib/go/src/net/http/status.go
 
 
 修改status.go后，直接复制替换：
