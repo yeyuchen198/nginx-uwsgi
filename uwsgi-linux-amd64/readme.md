@@ -1,0 +1,1 @@
+uwsgi-linux-amd64
