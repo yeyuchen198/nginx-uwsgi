@@ -1,0 +1,18 @@
+go env -w GOARCH=amd64
+go env -w GOOS=linux
+
+go env -w GOARCH=arm64
+go env -w GOOS=android
+
+
+如果出现exec format error，说明GOARCH或者GOOS不匹配，
+termux要设置：
+go env -w GOARCH=arm64
+
+再执行go run即可！
+
+参考：https://stackoverflow.com/questions/13870963/exec-format-error
+
+I had this problem - it was very simple: I had set $GOOS to something other than the OS I was testing on. You can't do cross-platform testing. So for "go test", don't set $GOOS. I'm pretty sure the "Exec format error" you got was a result of go test trying to execute something on the wrong architecture/OS.
+
+
