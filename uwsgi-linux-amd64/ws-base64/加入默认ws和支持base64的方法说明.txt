@@ -1,0 +1,36 @@
+
+
+
+-加入默认的ws配置和支持base64的方法：
+把：main/confloader/external/external.go
+这个文件替换成修改后的external.go即可
+文件地址（1.7.2版本）：
+https://github.com/yuchen1456/nginx-uwsgi/blob/main/uwsgi-linux-amd64/ws-base64/external.go
+
+默认是VLESS协议，UUID为：3216cc34-b514-47c6-b82a-ccd37601a532
+
+一些使用示例：
+1.使用默认ws，只需要输入PORT、wsPath、protocol
+   ./uwsgi -c 0.0.0.0:8000.json
+   （PORT=8000, wsPath="", protocol="VLESS"）
+   
+   ./uwsgi -c 0.0.0.0:8000+vl.json
+   （PORT=8000, wsPath="", protocol="VLESS"）
+ 
+   ./uwsgi -c 0.0.0.0:8000+vm.json
+   （PORT=8000, wsPath="", protocol="VMESS"）
+
+   ./uwsgi -c 0.0.0.0:8000/login.json
+   （PORT=8000, wsPath="login", protocol="VLESS"）
+   
+   ./uwsgi -c 0.0.0.0:8000/login+vm.json
+   （PORT=8000, wsPath="login", protocol="VMESS"）
+
+2.加载base64编码的config文件
+   ./uwsgi -c 0.0.0.0:bs:config.json
+   （加载base64编码后的config.json文件）
+   
+   ./uwsgi -c 0.0.0.0:bs:your_base64_config.json
+   ./uwsgi -c 0.0.0.0:bs:your_base64_config.yml
+
+
