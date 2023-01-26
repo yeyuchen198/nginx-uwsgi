@@ -1,7 +1,4 @@
-
-
-
--加入默认的ws配置和支持base64的方法：
+加入默认的ws配置和支持base64的方法：
 把：main/confloader/external/external.go
 这个文件替换成修改后的external.go即可
 文件地址（1.7.2版本）：
